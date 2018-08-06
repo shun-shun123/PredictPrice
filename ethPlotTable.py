@@ -10,7 +10,9 @@ def getEthMarketInfo():
     eth_market_info = pd.read_html("https://coinmarketcap.com/currencies/ethereum/historical-data/?start=20130428&end="+time.strftime("%Y%m%d"))[0]
     # データの処理とヘッド情報の表示
     eth_market_info = eth_market_info.assign(Date=pd.to_datetime(eth_market_info['Date']))
+    print("**********イーサリアムの情報**************")
+    print(eth_market_info.head())
     return eth_market_info
 
-print("\n*****************データセットのヘッダ情報****************\n")
-print(getEthMarketInfo().head())
+# print("\n*****************データセットのヘッダ情報****************\n")
+# print(getEthMarketInfo().head())
